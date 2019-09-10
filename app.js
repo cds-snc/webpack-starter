@@ -11,6 +11,7 @@ const path = require('path')
 const cookieSession = require('cookie-session')
 const cookieSessionConfig = require('./config/cookieSession.config')
 const { hasData, checkPublic, checkLangQuery } = require('./utils')
+
 const csp = require('./config/csp.config')
 
 // check to see if we have a custom configRoutes function
@@ -56,10 +57,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 // ieNoOpen sets X-Download-Options for IE8+
 // noSniff to keep clients from sniffing the MIME type
 // xssFilter adds some small XSS protections
-app.use(helmet())
-app.use(helmet.contentSecurityPolicy({ directives: csp }))
+//app.use(helmet())
+//app.use(helmet.contentSecurityPolicy({ directives: csp }))
 // gzip response body compression.
-app.use(compression())
+//app.use(compression())
 
 app.use(checkPublic)
 app.use(checkLangQuery)
