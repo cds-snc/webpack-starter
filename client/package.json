@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "description": "starter-react",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=development",
     "dev": "npm run start",
     "start": "webpack-dev-server --mode=development"
   },
