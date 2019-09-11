@@ -5,6 +5,7 @@ const {
   getRouteByName,
   addViewPath,
   setFlashMessageContent,
+  getClientJs,
 } = require('../../utils/index')
 
 module.exports = app => {
@@ -24,6 +25,9 @@ module.exports = app => {
       return res.redirect(getRouteByName('personal').path)
     }
 
-    res.render(name, { data: getSessionData(req) })
+    res.render(name, {
+      data: getSessionData(req),
+      jsPath: getClientJs(req, name),
+    })
   })
 }

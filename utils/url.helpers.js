@@ -46,8 +46,17 @@ const getHostProtocol = req => {
   return 'http'
 }
 
+const clientJsDir = '/js/dist/'
+
+const getClientJsPath = req => {
+  const domain = getDomain(req)
+  return `${domain}${clientJsDir}`
+}
+
 module.exports = {
   checkLangQuery,
   getDomain,
   getHostProtocol,
+  clientJsDir,
+  getClientJsPath,
 }
