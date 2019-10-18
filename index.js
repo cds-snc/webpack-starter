@@ -4,6 +4,17 @@ const merge = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const FileListPlugin = require("./FileListPlugin");
 
+//__dirname + "/**/*.js"
+const getFiles = path => {
+  const files = glob.sync(path);
+  const entries = files.reduce((acc, f) => {
+    acc[path.parse(f).name] = f;
+    return acc;
+  }, {});
+
+  return entries;
+};
+
 const getConfig = options => {
   const config = {
     plugins: [
@@ -60,5 +71,6 @@ const getConfig = options => {
 
 module.exports = {
   getConfig,
+  getFiles,
   merge
 };

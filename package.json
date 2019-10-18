@@ -1,5 +1,5 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "webpack-starter",
   "dependencies": {
     "@babel/core": "^7.6.4",
@@ -11,6 +11,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "glob": "^7.1.4",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
