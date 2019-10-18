@@ -1,14 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
+const merge = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FileListPlugin = require("./FileListPlugin");
 
 const getConfig = options => {
   const config = {
-    mode: options.mode,
-    entry: options.entry,
-    output: options.output,
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
@@ -59,9 +57,10 @@ const getConfig = options => {
     }
   };
 
-  return config;
+  return merge(config, options);
 };
 
 module.exports = {
-  getConfig
+  getConfig,
+  merge
 };
