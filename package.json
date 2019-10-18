@@ -1,5 +1,5 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "webpack-starter",
   "dependencies": {
     "@babel/core": "^7.6.4",

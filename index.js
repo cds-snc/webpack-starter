@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const FileListPlugin = require("./FileListPlugin");
+const glob = require('glob');
 
 //__dirname + "/**/*.js"
 const getFiles = path => {
