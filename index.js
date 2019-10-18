@@ -6,6 +6,7 @@ const FileListPlugin = require("./FileListPlugin");
 
 const getConfig = options => {
   const config = {
+    mode: options.mode,
     entry: options.entry,
     output: options.output,
     plugins: [
