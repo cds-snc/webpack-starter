@@ -3,11 +3,11 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const FileListPlugin = require("./FileListPlugin");
-const glob = require('glob');
+const glob = require("glob");
 
 //__dirname + "/**/*.js"
-const getFiles = path => {
-  const files = glob.sync(path);
+const getFiles = filePattern => {
+  const files = glob.sync(filePattern);
   const entries = files.reduce((acc, f) => {
     acc[path.parse(f).name] = f;
     return acc;
