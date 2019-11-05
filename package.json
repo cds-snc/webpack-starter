@@ -1,6 +1,7 @@
 {
   "version": "1.0.10",
-  "description": "@cds-snc/webpack-starter",
+  "name": "@cdssnc/webpack-starter",
+  "description": "CDS Webpack Starter",
   "dependencies": {
     "@babel/core": "^7.7.0",
     "@babel/plugin-proposal-class-properties": "^7.7.0",
