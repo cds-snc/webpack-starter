@@ -31,13 +31,7 @@ const getConfig = options => {
       rules: [
         {
           test: /\.scss$/,
-          use: [
-            "style-loader",
-            MiniCssExtractPlugin.loader,
-            "css-loader",
-            "postcss-loader",
-            "sass-loader"
-          ]
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
         },
         {
           test: /\.(js|jsx)$/,
