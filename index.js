@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FileListPlugin = require("./FileListPlugin");
 const glob = require("glob");
 
@@ -21,10 +22,23 @@ const getConfig = options => {
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
-      new FileListPlugin({ options: true })
+      new FileListPlugin({ options: true }),
+      new MiniCssExtractPlugin({
+        filename: "css/styles.css"
+      })
     ],
     module: {
       rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            "style-loader",
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "postcss-loader",
+            "sass-loader"
+          ]
+        },
         {
           test: /\.(js|jsx)$/,
           include: [path.resolve(__dirname, "src")],
